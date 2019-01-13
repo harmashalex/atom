@@ -15,8 +15,15 @@ public class Util {
      * @param values an argument. Assume values.length > 0.
      * @return the largest of values.
      */
-    public static int max(int[] values) {
-        throw new UnsupportedOperationException();
+    public static int max(int[] values) throws IllegalArgumentException {
+        if (values == null || values.length == 0) throw  new IllegalArgumentException("Values cannot be empty or null");
+
+        int max = values[0];
+        for (int temp : values) {
+            if (temp > max)
+                max = temp;
+        }
+        return max;
     }
 
     /**
@@ -26,7 +33,13 @@ public class Util {
      * @return the sum of all values.
      */
     public static long sum(int[] values) {
-        throw new UnsupportedOperationException();
+        if (values == null || values.length == 0) throw  new IllegalArgumentException("Values cannot be empty or null");
+
+        int sum = 0;
+        for (int temp: values) {
+            sum += temp;
+        }
+        return sum;
     }
 
 
